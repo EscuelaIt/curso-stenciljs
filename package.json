@@ -1,0 +1,53 @@
+{
+  "name": "hellotars-pizza",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.cjs.js",
+  "module": "dist/custom-elements/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/custom-elements/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/hellotars-pizza/hellotars-pizza.esm.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "format": "prettier --write 'src/**/*.{ts,tsx,css,html,json,js,scss}'",
+    "lint": "eslint src/**/*{.ts,.tsx}",
+    "generate": "stencil generate"
+  },
+  "dependencies": {
+    "@stencil/core": "^2.0.1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@stencil/eslint-plugin": "^0.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    " src/**/*.{ts,tsx,css,html,json,js,scss}": [
+      "npm run format",
+      "npm run lint"
+    ]
+  }
+}
