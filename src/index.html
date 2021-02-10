@@ -8,7 +8,48 @@
     <script type="module" src="/build/hellotars-pizza.esm.js"></script>
     <script nomodule src="/build/hellotars-pizza.js"></script>
   </head>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 100%;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .root {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .root > * + * {
+      margin-top: 1rem;
+    }
+  </style>
+
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <div class="root">
+      <tars-counter id="tars-counter" initial-value="23"></tars-counter>
+
+      <button id="button-native" onclick="onClicked()">RESET</button>
+    </div>
+
+    <script>
+      const button = document.getElementById('button-native');
+
+      // Disparar event.
+      function onClicked() {
+        button.dispatchEvent(new Event('clicked', { bubbles: true }));
+      }
+      // setTimeout(() => (document.getElementById('tarsCounter').initialValue = 4), 2000);
+    </script>
   </body>
 </html>
