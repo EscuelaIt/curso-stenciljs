@@ -9,6 +9,8 @@ export namespace Components {
     interface TarsCounter {
         "initialValue": number;
     }
+    interface TarsInput {
+    }
 }
 declare global {
     interface HTMLTarsCounterElement extends Components.TarsCounter, HTMLStencilElement {
@@ -17,16 +19,26 @@ declare global {
         prototype: HTMLTarsCounterElement;
         new (): HTMLTarsCounterElement;
     };
+    interface HTMLTarsInputElement extends Components.TarsInput, HTMLStencilElement {
+    }
+    var HTMLTarsInputElement: {
+        prototype: HTMLTarsInputElement;
+        new (): HTMLTarsInputElement;
+    };
     interface HTMLElementTagNameMap {
         "tars-counter": HTMLTarsCounterElement;
+        "tars-input": HTMLTarsInputElement;
     }
 }
 declare namespace LocalJSX {
     interface TarsCounter {
         "initialValue"?: number;
     }
+    interface TarsInput {
+    }
     interface IntrinsicElements {
         "tars-counter": TarsCounter;
+        "tars-input": TarsInput;
     }
 }
 export { LocalJSX as JSX };
@@ -34,6 +46,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "tars-counter": LocalJSX.TarsCounter & JSXBase.HTMLAttributes<HTMLTarsCounterElement>;
+            "tars-input": LocalJSX.TarsInput & JSXBase.HTMLAttributes<HTMLTarsInputElement>;
         }
     }
 }

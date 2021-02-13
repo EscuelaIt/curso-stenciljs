@@ -1,0 +1,14 @@
+tars-input {
+  display: block;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+
+  font: 1.2rem/1.2 Georgia, 'Bitstream Charter', serif;
+}
+
+label > * {
+  margin-top: 0.4rem;
+}
