@@ -1,0 +1,11 @@
+:root {
+  --background-color: #ffffff;
+
+  --primary-color: #303036;
+  --on-primary-color: #fffaff;
+
+  --font-size-content: 1rem;
+  --line-height-content: 1.2;
+
+  --border-radius: 20px;
+}
