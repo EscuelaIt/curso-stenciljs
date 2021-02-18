@@ -4,59 +4,57 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
+    <link rel="stylesheet" href="/build/hellotars-pizza.css" />
 
     <script type="module" src="/build/hellotars-pizza.esm.js"></script>
     <script nomodule src="/build/hellotars-pizza.js"></script>
   </head>
-  <style type="text/css">
-    * {
-      box-sizing: border-box;
-    }
-    html {
-      font-size: 100%;
-    }
-
+  <style>
     body {
-      font-size: 1rem;
       height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
+
+      padding: 0;
+      margin: 0;
     }
 
-    .root {
+    .wrapper {
+      flex-grow: 1;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-    }
 
-    .root > * + * {
-      margin-top: 1rem;
+      /*background: var(--background-button);*/
+      /*color: var(--color);*/
     }
   </style>
 
   <body>
-    <div class="root">
-      <!-- firs class -->
-      <!--<tars-counter id="tars-counter" initial-value="23"></tars-counter>-->
-      <!--<button id="button-native" onclick="onClicked()">RESET</button>-->
-
-      <!-- second class -->
-      <!--<tars-input></tars-input>-->
-
-
-
+    <div id="root" class="wrapper">
+      <!--       firs class-->
+      <!--      <tars-counter id="tars-counter" initial-value="23"></tars-counter>-->
+      <!--      <button id="button-native" onclick="onClicked()">RESET</button>-->
     </div>
 
     <script>
-      const button = document.getElementById('button-native');
+      // first class
+      // const button = document.getElementById('button-native');
 
       // Disparar event.
-      function onClicked() {
-        button.dispatchEvent(new Event('clicked', { bubbles: true }));
-      }
-      // setTimeout(() => (document.getElementById('tarsCounter').initialValue = 4), 2000);
+      // function onClicked() {
+      //   button.dispatchEvent(new Event('clicked', { bubbles: true }));
+      // }
+      // setTimeout(() => (document.getElementById('tars-counter').initialValue = 4), 2000);
+      // end first class
+
+      // (async () => {
+      //   await customElements.whenDefined('etiqueta-html');
+      //   const element = document.getElementById('id');
+      //   console.log(element);
+      //   console.log(await element.getRating());
+      // })();
     </script>
   </body>
 </html>
