@@ -11,6 +11,10 @@ export namespace Components {
     }
     interface TarsInput {
     }
+    interface TarsInputPassword {
+        "inputName": string;
+        "inputPlaceholder"?: string;
+    }
 }
 declare global {
     interface HTMLTarsCounterElement extends Components.TarsCounter, HTMLStencilElement {
@@ -25,9 +29,16 @@ declare global {
         prototype: HTMLTarsInputElement;
         new (): HTMLTarsInputElement;
     };
+    interface HTMLTarsInputPasswordElement extends Components.TarsInputPassword, HTMLStencilElement {
+    }
+    var HTMLTarsInputPasswordElement: {
+        prototype: HTMLTarsInputPasswordElement;
+        new (): HTMLTarsInputPasswordElement;
+    };
     interface HTMLElementTagNameMap {
         "tars-counter": HTMLTarsCounterElement;
         "tars-input": HTMLTarsInputElement;
+        "tars-input-password": HTMLTarsInputPasswordElement;
     }
 }
 declare namespace LocalJSX {
@@ -36,9 +47,15 @@ declare namespace LocalJSX {
     }
     interface TarsInput {
     }
+    interface TarsInputPassword {
+        "inputName"?: string;
+        "inputPlaceholder"?: string;
+        "onShowPassword"?: (event: CustomEvent<boolean>) => void;
+    }
     interface IntrinsicElements {
         "tars-counter": TarsCounter;
         "tars-input": TarsInput;
+        "tars-input-password": TarsInputPassword;
     }
 }
 export { LocalJSX as JSX };
@@ -47,6 +64,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "tars-counter": LocalJSX.TarsCounter & JSXBase.HTMLAttributes<HTMLTarsCounterElement>;
             "tars-input": LocalJSX.TarsInput & JSXBase.HTMLAttributes<HTMLTarsInputElement>;
+            "tars-input-password": LocalJSX.TarsInputPassword & JSXBase.HTMLAttributes<HTMLTarsInputPasswordElement>;
         }
     }
 }

@@ -2,7 +2,10 @@
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
     <title>Stencil Component Starter</title>
     <link rel="stylesheet" href="/build/hellotars-pizza.css" />
 
@@ -36,6 +39,11 @@
       <!--       firs class-->
       <!--      <tars-counter id="tars-counter" initial-value="23"></tars-counter>-->
       <!--      <button id="button-native" onclick="onClicked()">RESET</button>-->
+
+      <!-- second class -->
+      <tars-input-password placeholder="Password">
+        <span id="message"></span>
+      </tars-input-password>
     </div>
 
     <script>
@@ -55,6 +63,13 @@
       //   console.log(element);
       //   console.log(await element.getRating());
       // })();
+
+      const wrapper = document.querySelector('tars-input-password');
+      const message = document.getElementById('message');
+
+      wrapper.addEventListener('showPassword', ({ detail: isOpenEye }) => {
+        return (message.innerText = isOpenEye ? 'attention! Your password is visible' : '');
+      });
     </script>
   </body>
 </html>

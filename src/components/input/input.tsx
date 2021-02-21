@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'tars-input',
@@ -6,7 +6,6 @@ import { Component, h } from '@stencil/core';
 })
 export class Input {
   // private labelText = 'Select pizza';
-
   private input!: HTMLInputElement;
 
   // @ts-ignore
@@ -24,41 +23,52 @@ export class Input {
     return translateText[lang];
   }
 
+  greet() {
+    return false;
+
+    {
+
+    }
+  }
+
   // The render function simply needs to return the template, which will use JSX, that the component should use.
   render() {
     const language = navigator.language;
 
     return (
-      <div class={{ 'tars-input': true }}>
-        {/*Expressions*/}
-        {1 + 1}
-        {/*There are different ways to achieve conditionally displaying data/elements with JSX*/}
-        {language === 'es' ? (
-          <label>
-            {/*add a style to an element in JSX*/}
-            <span style={{ fontSize: '1.1rem' }}>🍕 {this.translateLabelText(navigator.language)}</span>
-            <input
-              // reference
-              ref={el => (this.input = el as HTMLInputElement)}
-              type="text"
-              // events
-              onInput={this.handlerInput.bind(this)}
-            />
-          </label>
-        ) : (
-          <label>
-            <span style={{ fontSize: '1.1rem' }}>🏴󠁧󠁢󠁥󠁮󠁧󠁿 {this.translateLabelText(navigator.language)}</span>
-            <input
-              ref={el => (this.input = el as HTMLInputElement)}
-              type="text"
-              onInput={this.handlerInput.bind(this)}
-            />
-          </label>
-        )}
-
-        {/*We can use the map method on an array of data to loop through the data and render out a part of the template for each iteration*/}
-        {[<span>'hello'</span>, <span>'tars'</span>].map(x => x)}
-      </div>
+      <Host>
+        <div class={{ 'tars-input': true }}>
+          {this.greet()}
+          {language === 'es' ? (
+            <label>
+              {/*add a style to an element in JSX*/}
+              <span style={{ fontSize: '1.1rem' }}>🍕 {this.translateLabelText(navigator.language)}</span>
+              <input
+                // reference
+                ref={el => {
+                  return (this.input = el as HTMLInputElement);
+                }}
+                type="text"
+                // events
+                onInput={this.handlerInput.bind(this)}
+              />
+            </label>
+          ) : (
+            <label>
+              <span style={{ fontSize: '1.1rem' }}>🏴󠁧󠁢󠁥󠁮󠁧󠁿 {this.translateLabelText(navigator.language)}</span>
+              <input
+                ref={el => (this.input = el as HTMLInputElement)}
+                type="text"
+                onInput={this.handlerInput.bind(this)}
+              />
+            </label>
+          )}
+          {/*We can use the map method on an array of data to loop through the data and render out a part of the template for each iteration*/}
+          {['rafael', 'miguel', 'juan'].map(x => {
+            return <li>{x}</li>;
+          })}
+        </div>
+      </Host>
     );
   }
 
