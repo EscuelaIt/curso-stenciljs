@@ -12,8 +12,14 @@ export namespace Components {
     interface TarsInput {
     }
     interface TarsInputPassword {
+        "getValue": () => Promise<boolean>;
         "inputName": string;
+        /**
+          * Set placeholder.
+         */
         "inputPlaceholder"?: string;
+        "isPasswordVisible": boolean;
+        "value"?: string;
     }
 }
 declare global {
@@ -49,8 +55,13 @@ declare namespace LocalJSX {
     }
     interface TarsInputPassword {
         "inputName"?: string;
+        /**
+          * Set placeholder.
+         */
         "inputPlaceholder"?: string;
+        "isPasswordVisible"?: boolean;
         "onShowPassword"?: (event: CustomEvent<boolean>) => void;
+        "value"?: string;
     }
     interface IntrinsicElements {
         "tars-counter": TarsCounter;

@@ -15,6 +15,8 @@ if (/windows phone/i.test(userAgent)) {
 }
 
 setMode(() => {
+  console.warn(Context.mode);
+
   // NOTE: you can write whatever you want here - it's up to you.
   return Context.mode;
 });
