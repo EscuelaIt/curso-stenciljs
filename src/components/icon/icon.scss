@@ -1,0 +1,34 @@
+:host {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  color: currentColor;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+
+  &.small {
+    width: var(--small);
+  }
+
+  &.medium {
+    width: var(--medium);
+  }
+
+  &.large {
+    width: var(--big);
+  }
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}

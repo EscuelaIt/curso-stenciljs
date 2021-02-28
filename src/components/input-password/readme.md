@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property           | Attribute     | Description      | Type     | Default     |
-| ------------------ | ------------- | ---------------- | -------- | ----------- |
-| `inputName`        | `name`        |                  | `string` | `''`        |
-| `inputPlaceholder` | `placeholder` | Set placeholder. | `string` | `undefined` |
-| `value`            | `value`       |                  | `string` | `undefined` |
+| Property            | Attribute     | Description      | Type      | Default     |
+| ------------------- | ------------- | ---------------- | --------- | ----------- |
+| `inputName`         | `name`        |                  | `string`  | `''`        |
+| `inputPlaceholder`  | `placeholder` | Set placeholder. | `string`  | `undefined` |
+| `isPasswordVisible` | `visible`     |                  | `boolean` | `false`     |
+| `value`             | `value`       |                  | `string`  | `undefined` |
 
 
 ## Events
@@ -23,16 +24,29 @@
 
 ## Methods
 
-### `getValues() => Promise<string>`
+### `getValue() => Promise<boolean>`
 
 
 
 #### Returns
 
-Type: `Promise<string>`
+Type: `Promise<boolean>`
 
 
 
+
+## Dependencies
+
+### Depends on
+
+- [my-icon](../icon)
+
+### Graph
+```mermaid
+graph TD;
+  tars-input-password --> my-icon
+  style tars-input-password fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

@@ -93,7 +93,19 @@ export class InputPassword {
             // onInput={() => this.handlerInput()}
           />
           <button type="button" onClick={this.handlerClick.bind(this)}>
-            Button
+            {this.type === 'password' ? (
+              <tars-icon
+                onClicked={(ev: Event) => {
+                  ev.preventDefault();
+                  console.log(ev.target);
+                }}
+                key="EYE-OFF-OUTLINE"
+                icon="EYE-OFF-OUTLINE"
+                size="MEDIUM"
+              />
+            ) : (
+              <tars-icon key="EYE-OUTLINE" icon="EYE-OUTLINE" size="MEDIUM" />
+            )}
           </button>
         </div>
         <slot />

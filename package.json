@@ -1,6 +1,10 @@
 {
-  "name": "hellotars-pizza",
-  "version": "0.0.1",
+  "name": "@hellotars/hello-tars-pizza",
+  "author": {
+    "name": "EscuelaIt",
+    "email": ""
+  },
+  "version": "0.0.4",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -24,6 +28,7 @@
     "generate": "stencil generate"
   },
   "dependencies": {
+    "@hellotars/hello-tars-pizza": "^0.0.4",
     "@stencil/core": "^2.4.0"
   },
   "license": "MIT",
