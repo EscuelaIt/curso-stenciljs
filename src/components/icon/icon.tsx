@@ -7,7 +7,7 @@ import { Size } from './types/size';
 @Component({
   tag: 'tars-icon',
   styleUrl: 'icon.scss',
-  assetsDirs: ['svg'],
+  assetsDirs: ['assets/svg'],
   shadow: true,
 })
 export class Icon implements ComponentWillLoad {
@@ -25,7 +25,7 @@ export class Icon implements ComponentWillLoad {
   @Event() clicked: EventEmitter<boolean>;
 
   async componentWillLoad() {
-    this.svgContent = await getSVG(`./svg/${Icons[this.icon]}`);
+    this.svgContent = await getSVG(`./assets/svg/${Icons[this.icon]}`);
   }
 
   get iconSize(): string {

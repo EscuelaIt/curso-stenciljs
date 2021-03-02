@@ -24,13 +24,13 @@
 
 ## Methods
 
-### `getValue() => Promise<boolean>`
+### `getValue() => Promise<string>`
 
 
 
 #### Returns
 
-Type: `Promise<boolean>`
+Type: `Promise<string>`
 
 
 
@@ -39,12 +39,12 @@ Type: `Promise<boolean>`
 
 ### Depends on
 
-- [my-icon](../icon)
+- [tars-icon](../icon)
 
 ### Graph
 ```mermaid
 graph TD;
-  tars-input-password --> my-icon
+  tars-input-password --> tars-icon
   style tars-input-password fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -19,7 +19,7 @@ export namespace Components {
     interface TarsInput {
     }
     interface TarsInputPassword {
-        "getValue": () => Promise<boolean>;
+        "getValue": () => Promise<string>;
         "inputName": string;
         /**
           * Set placeholder.

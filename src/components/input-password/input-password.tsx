@@ -74,7 +74,10 @@ export class InputPassword {
 
   @Method()
   async getValue() {
-    return this.isPasswordVisible;
+    if (this.type === 'text') {
+      console.log('DANGER! your password was stolen');
+      return this.inputPassword.value;
+    }
   }
 
   render() {
@@ -95,10 +98,7 @@ export class InputPassword {
           <button type="button" onClick={this.handlerClick.bind(this)}>
             {this.type === 'password' ? (
               <tars-icon
-                onClicked={(ev: Event) => {
-                  ev.preventDefault();
-                  console.log(ev.target);
-                }}
+                onClicked={(ev: Event) => ev.preventDefault()}
                 key="EYE-OFF-OUTLINE"
                 icon="EYE-OFF-OUTLINE"
                 size="MEDIUM"
